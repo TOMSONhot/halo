@@ -3,7 +3,6 @@
 </template>
 <script>
 import api from '../../api/api';
-// {{$t('demo.common.language')}}
 export default {
   data() {
     return {};
