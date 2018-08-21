@@ -9,7 +9,7 @@ import skinUtil from '../utils/set-skin';
 
 // 引入组件
 const apiTest = resolve => {
-  import('../view/test-lab/api-test.vue').then(module => {
+  import('../view/test-lab/demo.vue').then(module => {
     resolve(module);
   });
 };
