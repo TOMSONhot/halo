@@ -1,8 +1,9 @@
 <template>
-  <div>{{$t('demo.common.language')}}国际化</div>
+  <div>国际化</div>
 </template>
 <script>
 import api from '../../api/api';
+// {{$t('demo.common.language')}}
 export default {
   data() {
     return {};
