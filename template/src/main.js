@@ -1,26 +1,31 @@
-{{#if_eq build "standalone"}}
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-{{/if_eq}}
-import Vue from 'vue'
-import App from './App'
-{{#router}}
-import router from './router'
-{{/router}}
+import Vue from 'vue';
+import App from './App';
+// 引入hui
+import HUI from 'hui';
+import 'hui/lib/theme-default/index.css';
 
-Vue.config.productionTip = false
+import router from './router';
+// 引入i18n多语言
+import i18n from './i18n';
+// 引用API文件
+import api from './api/http';
+// 引入vuex
+import store from './store';
+// 将HUI引至全局
+Vue.use(HUI);
+
+// 将API方法绑定至全局
+Vue.prototype.$api = api;
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  {{#router}}
   router,
-  {{/router}}
-  {{#if_eq build "runtime"}}
-  render: h => h(App)
-  {{/if_eq}}
-  {{#if_eq build "standalone"}}
+  i18n,
+  store,
   components: { App },
   template: '<App/>'
-  {{/if_eq}}
-})
+});
