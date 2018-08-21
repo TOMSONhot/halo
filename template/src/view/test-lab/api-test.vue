@@ -1,8 +1,7 @@
 <template>
-  <div>{{$t('demo.common.language')}}1231231</div>
+  <div>{{$t('demo.common.language')}}国际化</div>
 </template>
 <script>
-// import testLabApi from '../../api/testLab';
 import api from '../../api/api';
 export default {
   data() {
